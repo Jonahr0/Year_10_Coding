@@ -1,0 +1,9 @@
+ access_token = "insert your key here";
+    current_artist = "artist name"
+    base = "https://api.spotify.com/v1/search?q=";
+    base+="artist%3A"+current_artist;
+    base+="&type=track";
+    base+="&limit=50"
+    return fetch(base, {headers:{"Authorization":"Bearer "+access_token}})
+    .then((resp) => resp.json())
+    .then(data => console.log(data))
